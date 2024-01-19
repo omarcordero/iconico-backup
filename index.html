@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ICONICO - Perú</title>
+  <base href="/">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="HandheldFriendly" content="true" />
+  <link rel="icon" type="image/x-icon" id="favicon">
+  <script>
+    const URI = "https://iconicoperu.com/iconicobackend";
+    // const URI = "http://165.22.6.220/api-iconico";
+    async function getSettings() {
+      const resp = await fetch(URI + '/public/api/settings/image/getAllNotNull');
+      return resp.json();
+    }
+
+    (async () => {
+      const resp = await getSettings();
+      const data = resp.data;
+      const logo = data.find(e => e.id == 9);
+      if (logo) {
+        const favicon = document.getElementById('favicon');
+        favicon.href = URI + '/public/storage/' + logo.upload;
+      }
+    })();
+  </script>
+
+
+  <!--===============================================================================================-->
+  <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.css" />
+  <script src="https://unpkg.com/leaflet-geosearch@3.0.0/dist/geosearch.umd.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="styles.7bd1e7d3b6cbf6281646.css"><link rel="stylesheet" href="main.2f0c9f86a9bed16c31c7.css"></head>
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBimD1z2HvcfHhHYP6sLYiiP_AdHP9-V-I&libraries=places"
+    async defer></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3344BFYXKV"></script>
+
+  <!-- Google -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-3344BFYXKV');
+  </script>
+
+  <!-- Facebook -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1321314894920459');
+    fbq('track', 'PageView');
+  </script>
+  <script>
+    function imgError(image) {
+      image.onerror = "";
+      image.src = "https://electricom.com.mx/images/cargando.gif";
+      return true;
+    }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1321314894920459&ev=PageView&noscript=1" /></noscript>
+
+<script src="runtime-es2015.0dae8cbc97194c7caed4.js" type="module"></script><script src="runtime-es5.0dae8cbc97194c7caed4.js" nomodule defer></script><script src="polyfills-es5.28f12a96904b8f2b6d42.js" nomodule defer></script><script src="polyfills-es2015.7f2be5c3211715ed096a.js" type="module"></script><script src="scripts.91d98457015efb8819c6.js" defer></script><script src="main-es2015.08897a4da6fbe5147720.js" type="module"></script><script src="main-es5.08897a4da6fbe5147720.js" nomodule defer></script></body>
+
+</html>
